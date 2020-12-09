@@ -1,6 +1,5 @@
 function fx(x) {
     let y = x ** 2;
-    // console.log(x, y);
     return y;
 }
 console.time("fx");
@@ -9,7 +8,6 @@ for (let i = -10; i <= 10; i++) {
     console.log(i, n);
 }
 console.timeEnd("fx");
-// Наследование, Инкапсуляция и Полиморфизм
 
 function getNumber(max = 5, min = 1) { // undefined
     let n = Math.random();
@@ -32,11 +30,10 @@ function getRGB() {
 }
 console.log(getRGB());
 
-// для сайта ht.html
+
 function setColor() {
     return `background: ${getRGB()}`;
 }
-// || В А Ж Н О ||
 
 // rightWord(5, "ворон", "ворона", "вороны");
 // rightWord(5, "рублей", "рубль", "рубля");
