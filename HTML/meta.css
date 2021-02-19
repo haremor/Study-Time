@@ -1,0 +1,75 @@
+body{
+    margin: 0;
+    background: navy;
+    font: 30px sans-serif;
+    color: lightgoldenrodyellow;
+}
+.wrapper{
+    width: 1200px;
+    margin: auto;
+
+}
+.banner{
+    height: 700px;
+    background-image: url(https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fspecials-images.forbesimg.com%2Fdam%2Fimageserve%2F765877054%2F960x0.jpg%3Ffit%3Dscale);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.carditem{
+    height: 150px;
+    width: 350px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.carditem:hover{
+    border-radius: 40px;
+}
+.cards{
+    padding: 50px 50px 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+@media print{
+    .wrapper{
+        width: 100%;
+    }
+    .carditem{
+        width: 27%;
+    }
+    .banner{
+        height: 200px;
+        filter: grayscale(50%);
+    }
+    body{
+        background: white;
+        color: black;
+    }
+}
+
+@media (max-width: 1200px){
+    .wrapper{
+        width: 100%;
+    }
+    body{
+        background: blue;
+    }
+    .carditem{
+        width: 45%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 450px){
+    body{
+        background: crimson;
+    }
+    .carditem{
+        width: 100%;
+    }
+}

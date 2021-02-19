@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MA SHET</title>
+    <script src="../func.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <style>
+        input, select{
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .card{
+            width: 1000px;
+            height: 500px;
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-image: url(../../../unnamed.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+        .icon{
+            
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="get-card">
+        <input type="text" name="name" placeholder="Enter shit">
+        <br>
+        <label for="select-image"></label>
+        <select name="select-image" id="select-image">
+            <option value="fas fa-cannabis fa-3x">WEED</option>
+            <option value="fas fa-dice-d20 fa-3x">DICE</option>
+            <option value="fas fa-paw fa-3x">PAW</option>
+        </select>
+    </form>
+    <div class="card" id="card">
+        <div class="icon" id="icon"></div>
+        <div id="text"></div> 
+    </div>
+    <script src=".js"></script>
+</body>
+</html>

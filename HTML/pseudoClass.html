@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box {
+            background: #627C85;
+            width : 300px ; 
+            /* height: 50vh; 50% - это высота экрана */
+            border-width: 10px;
+            border-color: #A6A867;
+            border-style: double; /* dotted || solid || dashed || double || none */
+            border-bottom-style: dotted;
+            border-bottom-color: #E3DC95;
+            border-radius: 25px 50px;
+            padding: 40px 50px;
+            text-align: center;
+            color: #44344F;
+            font: 15px / 1 sans-serif; 
+            margin: 50px auto 100px;
+        }
+        .menu {
+            width: 620px;
+            background: #E3DCC2;
+            margin: 0 auto;
+            padding: 0;
+            list-style-type: none;
+            font-size: 0;
+        }
+        .menu li {
+            width: calc(100% / 3 - 2px);
+            height: 50px;
+            border: dotted 1px;
+            display: inline-block; /* inline || block */
+            text-align: center;
+            font-size: 15px;
+            line-height: 50px;
+        }
+        .menu a:hover {
+            /*text-height: 50px; высота строки = высота тега => строчка с текстом по центру по вертикали*/
+            text-decoration: none;
+            display: block;
+            background: #A76D60;
+            color: #463F1A;
+        }
+    </style>
+</head>
+<body>
+    <!-- .box>lorem70 -->
+    <!-- ul.menu>li*3>a>lorem2 -->
+    <ul class="menu">
+        <li><a href="">Lorem, ipsum.</a></li>
+        <li><a href="">Obcaecati, vero.</a></li>
+        <li><a href="">Laudantium, voluptatum?</a></li>
+    </ul>
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos amet excepturi deserunt doloremque, cum fuga facilis eligendi dolorum dolorem, eaque ipsam maiores. Rem labore sequi deserunt praesentium adipisci! Animi assumenda earum quos praesentium repudiandae aliquam dolor quis dicta reiciendis culpa unde, rerum suscipit quia recusandae magnam sit ad, ipsa minus laborum saepe magni! Voluptatibus quidem est repudiandae quae eum debitis distinctio eaque? Sed error laboriosam fuga aperiam! Nisi, error repellendus.
+    </div>
+
+    <div class="box">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos amet excepturi deserunt doloremque, cum fuga facilis eligendi dolorum dolorem, eaque ipsam maiores. Rem labore sequi deserunt praesentium adipisci! Animi assumenda earum quos praesentium repudiandae aliquam dolor quis dicta reiciendis culpa unde, rerum suscipit quia recusandae magnam sit ad, ipsa minus laborum saepe magni! Voluptatibus quidem est repudiandae quae eum debitis distinctio eaque? Sed error laboriosam fuga aperiam! Nisi, error repellendus.
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MA SHET</title>
+    <style>
+        *{
+            font-family: cursive;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="newWindow()">TACH MI</button>
+    <button onclick="closeWindow()">CLOZ MI</button>
+    <script>
+        // let shet = confirm("SHIT?");
+        // document.write(`<div style="background: crimson; height: ${window.innerHeight / 2}px;">fuck</div>`)
+        let w;
+        let wwidth = Math.round(screen.width / 2);
+        let wheight = Math.round(screen.height / 2);
+        let wtop = (screen.height - wheight) / 2;
+        let wleft = screen.width / 4;
+        
+        function newWindow() {
+            w = window.open("", "", `width=${wwidth}, height=${wheight}, top=${wtop}, left=${wleft}`);
+            let n = getNumber();
+            console.log(n);
+            w.document.body.style.backgroundColor = n;
+        }
+        
+        function closeWindow() {
+            w.close();
+        }
+        
+        function getNumber(max = 256, min = 0){
+            return Math.floor(Math.random() * (max - min) + min);
+        }
+    </script>
+</body>
+</html>
