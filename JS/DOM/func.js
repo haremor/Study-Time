@@ -12,5 +12,5 @@ function getNumber(max, min = 0){
 
 function getRGB(alphaChange = false){
     let n;
-    return `rgb(${getNumber(256)}, ${getNumber(256)}, ${getNumber(256)}, ${n = alphaChange == true ? Math.random() : 1})`;
+    return `rgb(${getNumber(256)}, ${getNumber(256)}, ${getNumber(256)}, ${n = alphaChange === true ? Math.random() : 1})`;
 }

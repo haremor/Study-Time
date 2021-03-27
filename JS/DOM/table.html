@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tbody style="border: 2px red solid;"></tbody>
+    </table>
+    <script>
+        let tbl = document.body.firstElementChild.firstElementChild;
+        console.log(tbl);
+
+        if (tbl.hasChildNodes()) {
+            console.log(tbl.firstChild.nodeName);
+        }
+
+        let cnt = 3;
+        while (cnt--) {
+            let tr = document.createElement("tr");
+            tbl.appendChild(tr);
+            console.log(tbl.getAttribute("style"));
+            let n = 5;
+            while (n--) {
+                if (cnt === 2) {
+                    let th = document.createElement("th");
+                    tr.appendChild(th);
+                    th.innerText = "num" + n;
+                } else {
+                    let td = document.createElement("td");
+                    tr.appendChild(td);
+                    td.innerText = n;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

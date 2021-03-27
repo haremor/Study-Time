@@ -5,13 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MA SHET</title>
     <script src="../func.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+        integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+        crossorigin="anonymous" />
     <style>
-        input, select{
+        input,
+        select {
             margin-bottom: 10px;
             font-size: 20px;
         }
-        .card{
+        .card {
             width: 1000px;
             height: 500px;
             text-align: center;
@@ -21,13 +24,10 @@
             align-items: center;
             justify-content: center;
             flex-direction: column;
-            background-image: url(../../../unnamed.jpg);
+            background-image: url(../../../Images/unnamed.jpg);
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
-        }
-        .icon{
-            
         }
     </style>
 </head>
@@ -44,8 +44,25 @@
     </form>
     <div class="card" id="card">
         <div class="icon" id="icon"></div>
-        <div id="text"></div> 
+        <div id="text"></div>
     </div>
-    <script src=".js"></script>
+    <script>
+        let form = document.forms["get-card"];
+        log(form);
+        form.onchange = function () {
+            let formBody = {};
+            for (let i = 0; i < form.elements.length; i++) {
+                let el = form.elements[i];
+                if (el.name) {
+                    formBody[el.name] = el.value || "VOID";
+                }
+            }
+            log(formBody);
+            let card = document.getElementById("text");
+            card.innerText = formBody.name;
+            let icon = document.getElementById("icon");
+            icon.className = formBody["select-image"];
+        }
+    </script>
 </body>
 </html>
