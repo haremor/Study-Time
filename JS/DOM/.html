@@ -16,10 +16,23 @@
             margin-top: 0;
         }
         .caption {
-
+            border: 1px solid lightsalmon;
+            background-image: linear-gradient(to bottom, lightsalmon, lightpink 40%, lightpink 60%, lightsalmon);
+            padding: 5px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .caption.active {
+            border-color: lightseagreen;
+        }
+        .caption.active+.text {
+            max-height: 100px;
         }
         .text {
-            
+            padding: 0 21px;
+            max-height: 0;
+            overflow: hidden;
+            transition-duration: .7s;
         }
     </style>
 </head>
@@ -39,7 +52,20 @@
         <div class="text">Mollitia pariatur modi, molestiae laboriosam ut quisquam officia nihil harum accusantium eum consectetur rerum sint quod at deleniti cumque cupiditate. Repellat quidem ut sapiente veritatis eveniet. Ex qui deserunt necessitatibus.</div>
     </div>
     <script>
-
+        let items = document.getElementsByClassName("caption");
+        items = Array.from(items);
+        items.forEach(item => {
+            item.onclick = (e) => {
+                e.target.classList.toggle("active");
+                let brother = e.target.nextElementSibling;
+                if (e.target.classList.contains("active")) {
+                    brother.style.height = brother.scrollHeight + "px";
+                } else {
+                    brother.style.height = 0 +"px";
+                }
+                
+            }
+        });
     </script>
 </body>
 </html>
