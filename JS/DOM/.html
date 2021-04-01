@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHET</title>
+    <script src="func.js"></script>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: lightpink;
+        }
+        button {
+            padding: 20px;
+            border-radius: 50%;
+            outline: none;
+            color: lightpink;
+            border: none;
+            text-transform: uppercase;
+            font: bold 20px sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <button>NO TACHY</button>
+    <script>
+        let ping = 0;
+        let btn = document.body.firstElementChild;
+        // btn.onclick = function() {
+        //     ping++;
+        //     log("Click! " + ping);
+        //     this.innerText = "CLICK";
+        // }
+        const ticks = function() {
+            ping++;
+            log("Click! " + ping);
+        }
+        btn.addEventListener("click", ticks);
+        btn.addEventListener("click", function() {
+            this.innerText = "CLICK";
+            if (ping >= 10) {
+                this.innerText = "DA";
+                btn.removeEventListener("click", ticks);
+            }
+        });
+        btn.addEventListener("click", e => {
+            document.body.style.opacity = (100 - ping * 10) / 100;
+        })
+    </script>
+</body>
+</html>
