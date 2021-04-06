@@ -5,13 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SHET</title>
+    <script src="func.js"></script>
     <style>
-
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 100px;
+            font: 24px monospace;
+        }
+        #block {
+            width: 500px;
+            height: 300px;
+            border-width: 10px;
+            border-style: solid;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        h2 {
+            margin: 0 0 36px;
+            text-align: center;
+        }
+        .white {
+            border-color: white;
+        }
     </style>
 </head>
 <body>
+    <h2>EVENTS</h2>
+    <!-- div#block>button#btn{BUTT} -->
+    <div id="block">
+        <button id="btn">BUTT</button>
+    </div>
      <script>
+        const body = document.body;
+        const block = document.getElementById("block");
+        const btn = document.getElementById("btn");
 
+        body.addEventListener("click", function(e) {
+            this.style.background = getRGB();
+        });
+        block.addEventListener("click", function(e) {
+            e.stopPropagation();
+            this.classList.toggle("white");
+        });
+        let cnt = 0;
+        btn.addEventListener("click", e => {
+            e.stopPropagation();
+            e.target.innerText = `PUK ${cnt++}`;
+        })
      </script>
 </body>
 </html>
