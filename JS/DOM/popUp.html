@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup window</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        .popup {
+            width: 300px;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: calc(50vh - 100px);
+            left: calc(50vw - 150px);
+            box-shadow: 0 0 5px 0 #0002;
+            font: 34px sans-serif;
+            border-radius: 20px;
+            z-index: 20;
+            background-color: #fff;
+        }
+
+        .closePopup {
+            width: 40px;
+            height: 40px;
+            background: #ddd;
+            border-radius: 50%;
+            transform: rotate(45deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            cursor: pointer;
+            font-size: 30px;
+        }
+
+        body.hidden {
+            overflow: hidden;
+        }
+        .hidden::before {
+            content: "";
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, .5);
+            position: fixed;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="msg">
+        <label for="msg">Write a message</label>
+        <input type="text" placeholder="here" id="msg">
+        <br>
+        <button data-type="popup">Show message</button>
+    </div>
+    <script>
+        // 1. Получаем кнопку по атрибуту data-stype
+        let msgBtn = document.querySelector("[data-type =\"popup\"]");
+        //.querySelector(selector) - возвращает первый попавшийся html-элемент по соответсвующему css-селектору
+        //.querySelectorAll(selector) - возвращает список (NodeList) из всех html-элементов по соответсвующему css-селектору
+        const showPopup = (msg) => {
+            let box = document.createElement("div");
+            box.className = "popup";
+            box.innerText = msg;
+            let close = document.createElement("div");
+            close.className = "closePopup";
+            close.innerText = "+";
+            box.appendChild(close);
+            document.body.appendChild(box);
+            document.body.classList.add("hidden");
+            close.addEventListener("click", (e) => {
+                box.remove();
+                document.body.classList.remove("hidden")
+            })
+        }
+
+        msgBtn.addEventListener("click", (e) => {
+            let text = e.target.previousElementSibling.value;
+            if (text) {
+                showPopup(text);
+            } else {
+                showPopup("Empty message")
+            }
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <script src="func.js"></script>
+    <style>
+        .monthGrid {
+            display: grid;
+            grid-template-columns: repeat(7, 2rem);
+            grid-auto-rows: 2rem;
+            gap: 1rem;
+        }
+        .cell {
+            border: 1px solid;
+        }
+    </style>
+</head>
+<body>
+    <button id="calendarBtn"></button>
+
+    <script>
+        const today = new Date();
+        const currentYear = today.getFullYear();
+        const monthNames = [
+            'January',
+            'Febuary',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December'
+        ];
+        const daysOfWeek = ["Mo", "Tu", "We", "Th", "Fr", "St", "Su"];
+
+        const currentMonth = monthNames[today.getMonth()];
+        let step = 0;
+
+        const showCalendar = function () {
+            const clndr = document.querySelector('.calendar');
+            if (clndr) {
+                clndr.remove();
+            } else {
+                const block = document.createElement('div');
+                block.className = 'calendar';
+                block.innerText = `${currentMonth}, ${currentYear}`;
+                document.body.appendChild(block);
+                const plus = document.createElement('button');
+                const minus = document.createElement('button');
+                plus.innerText = '+';
+                minus.innerText = '-';
+                block.append(plus, minus);
+                addGrid(block);
+                plus.addEventListener('click', function (e) {
+                    step++;
+                    updateDate(step, block);
+                    setMonthGrid(step, new Date(currentYear, today.getMonth() + step).getFullYear())
+                });
+                minus.addEventListener('click', function (e) {
+                    step--;
+                    updateDate(step, block);
+                    setMonthGrid(step, new Date(currentYear, today.getMonth() + step).getFullYear())
+                });
+                setMonthGrid(today.getMonth(), currentYear);
+            }
+        }
+        const updateDate = function (step, box) {
+            newDate = new Date(currentYear, today.getMonth() + step);
+            box.firstChild.nodeValue = monthNames[newDate.getMonth()] + ', ' + newDate.getFullYear();
+        }
+        const setZeroNumber = function (number) {
+            if ((number + '').length < 2) {
+                return '0' + number;
+            }
+            return number;
+        }
+        const addGrid = function (parent) {
+            const grid = document.createElement('div');
+            grid.className = 'monthGrid';
+            let cnt = 42;
+            for (let day of daysOfWeek) {
+                grid.innerHTML += `<div class=\'cell weekDay\'>${day}</div>`;
+            }
+            while (cnt--) {
+                grid.innerHTML += '<div class=\'cell\'></div>'
+            }
+            parent.appendChild(grid);
+        }
+        const setMonthGrid = function(m, y) {
+            let firstMonthDay = new Date(y, m);
+            let lastMonthDay = new Date(y, m + 1, 0);
+            log(firstMonthDay, lastMonthDay);
+            let cells = document.querySelectorAll(".cell:not(.weekDay)");
+            log(cells);
+            cells.forEach(c => c.innerText = "")
+            for (let day = firstMonthDay.getDate(), start = firstMonthDay.getDay() === 0 ? 7 : firstMonthDay.getDay(), end = lastMonthDay.getDate(); start <= end; day++) {
+                cells[start - 2 + day].innerText = new Date(y, m, day).getDate();
+            }
+        }
+        const btn = document.getElementById('calendarBtn');
+        btn.innerText = `${today.getDate()}.${setZeroNumber(today.getMonth() + 1)}.${currentYear}`
+        btn.addEventListener('click', showCalendar);
+    </script>
+</body>
+</html>

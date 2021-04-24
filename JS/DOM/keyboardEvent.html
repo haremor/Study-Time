@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHET</title>
+    <script src="func.js"></script>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .popup {
+            width: 20vw;
+            height: 20vh;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .2), 
+                        0 0 20px rgba(0, 0, 0, .2);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font: 50px "Impact", fantasy;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup"></div>
+    <script>
+        let div = document.querySelector(".popup");
+        
+        document.body.addEventListener("keypress", e => {
+            log(e.key);
+            if (e.key === "Enter") {
+                div.innerHTML += "<br>"
+            } else {
+                div.innerText += e.key;
+            }
+            
+        });
+        document.body.addEventListener("keydown", e => {
+            if (e.key === " ") {
+                div.innerHTML += "&nbsp;";
+            } else if (e.key === "Tab") {
+                div.innerHTML += "&nbsp;&nbsp;&nbsp;&nbsp;"
+            } else if (e.key === "Backspace") {
+                let str = "";
+                let current = div.innerHTML;
+                for (let i = 0; i < current.length - 1; i++) {
+                    str += current[i]
+                }
+                div.innerHTML = str;
+            }
+        })
+    </script>
+</body>
+</html>
