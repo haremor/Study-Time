@@ -10,7 +10,6 @@ function getNumber(max, min = 0){
     return Math.round(Math.random() * (max - min) + min);
 }
 
-function getRGB(alphaChange = false){
-    let n;
-    return `rgb(${getNumber(256)}, ${getNumber(256)}, ${getNumber(256)}, ${n = alphaChange === true ? Math.random() : 1})`;
+function getRGB(alphaChange){
+    return `rgb(${getNumber(256)}, ${getNumber(256)}, ${getNumber(256)}, ${alphaChange})`;
 }

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHET</title>
+    <script>
+        let puk = [
+            "puk",
+            "pipi",
+            "poo",
+            "buns",
+            "weewee",
+            "boobees",
+            "yomama",
+            "eatdapoopoo",
+            "billy",
+            "doodoo"
+        ]
+    </script>
+    <style>
+        body {
+            font: 2rem sans-serif;
+            width: 800px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>SERCH</h1>
+    <input type="search" placeholder="SERCH">
+    <ul id="list"></ul>
+    <script>
+        const list = document.getElementById("list");
+        const search = document.querySelector("[type=\"search\"]");
+
+        const showList = (arr) => {
+            let items = arr.map(el => `<li>${el}</li>`);
+            list.innerHTML = items.join("")
+        }
+        const searchList = (txt) => {
+            let exp = new RegExp(txt, "i");
+            // console.log(puk[0], txt, exp.test(puk[0]));
+            // console.log(puk[0], txt, puk[0].search(exp));
+            let newArr = puk.filter(el => {
+                if (exp.test(el)) return el;
+            });
+            console.log(newArr);
+            showList(newArr)
+        }
+        search.addEventListener("input", e => {
+            searchList(e.target.value)
+        })
+        showList(puk)
+    </script>
+</body>
+</html>

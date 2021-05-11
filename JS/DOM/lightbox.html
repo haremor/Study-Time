@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHET</title>
+    <script>
+        const icons = [
+            "icons/Tilda_Icons_7cafe_24hours.svg",
+            "icons/Tilda_Icons_7cafe_burger.svg",
+            "icons/Tilda_Icons_7cafe_coffeehouse.svg",
+            "icons/Tilda_Icons_7cafe_coffeemachine.svg",
+            "icons/Tilda_Icons_7cafe_coffeetogo.svg",
+            "icons/Tilda_Icons_7cafe_croissant.svg",
+            "icons/Tilda_Icons_7cafe_cup.svg",
+            "icons/Tilda_Icons_7cafe_flag.svg",
+            "icons/Tilda_Icons_7cafe_jezve.svg",
+            "icons/Tilda_Icons_7cafe_letter.svg",
+            "icons/Tilda_Icons_7cafe_man.svg",
+            "icons/Tilda_Icons_7cafe_map.svg",
+            "icons/Tilda_Icons_7cafe_menu.svg",
+            "icons/Tilda_Icons_7cafe_note.svg",
+            "icons/Tilda_Icons_7cafe_notebook.svg",
+            "icons/Tilda_Icons_7cafe_phone.svg",
+            "icons/Tilda_Icons_7cafe_table.svg",
+            "icons/Tilda_Icons_7cafe_teabag.svg",
+            "icons/Tilda_Icons_7cafe_togo.svg",
+            "icons/Tilda_Icons_7cafe_wifi.svg"
+        ]
+        icons.sort(() => Math.random() - 0.5);
+    </script>
+    <script>
+        window.addEventListener("load", e => {
+            const container = document.createElement("div");
+            container.className = "container";
+            document.body.appendChild(container)
+            icons.forEach(ico => {
+                const el = document.createElement("div");
+                el.className = "card";
+                el.setAttribute("data-src", ico);
+                el.style.backgroundImage = `url(${ico})`;
+                container.appendChild(el)
+            });
+
+            ///////////////////////////////////////////
+
+            const lbx = document.querySelector(".lightbox");
+            const cross = lbx.querySelector(".cross");
+            const next = lbx.querySelector(".arrow.right");
+            const prev = lbx.querySelector(".arrow.left");
+            const cards = document.querySelectorAll(".card");
+
+            const showLightbox = (e) => {
+                document.body.classList.add("light");
+                lbx.firstElementChild.style.backgroundImage = `url(${e.target.getAttribute("data-src")})`;
+            }
+            const hideLightbox = () => {
+                document.body.classList.remove("light"); 
+            }
+
+            cards.forEach(card => {
+                card.addEventListener("click", showLightbox);
+            })
+            cross.addEventListener("click", hideLightbox);
+            document.body.addEventListener("keydown", (e) => {
+                if (e.key === "Escape") {
+                    hideLightbox();
+                }
+            })
+        })
+    </script>
+    <style>
+        .container {
+            display: grid;
+            grid-auto-rows: 200px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            width: 1000px;
+            margin: auto;
+        }
+        .card {
+            border: 1px dotted;
+            border-radius: 1rem;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .lightbox {
+            background: transparent;
+            height: 90vh;
+            width: 90vw;
+            border-radius: 1rem;
+            position: fixed;
+            top: 5vh;
+            left: 5vw;
+            display: none;
+            box-shadow: 0 0 5px 0 #0002, 0 0 15px 0 #0002;
+        }
+        .lightbox>.box {
+            width: 100%;
+            height: calc(100% - 4rem);
+            margin: 2rem;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        .lightbox>.cross {
+            width: 2rem;
+            height: .5rem;
+            background: black;
+            position: absolute;
+            top: .75rem;
+            transform: rotate(45deg);
+            right: 1rem;
+            cursor: pointer;
+        }
+        .lightbox>.cross::before {
+            width: .5rem;
+            height: 2rem;
+            background: black;
+            position: absolute;
+            content: "";
+            left: .75rem;
+            top: -.75rem;
+        }
+        .arrow {
+            position: absolute;
+            top: calc(50% - 2.5rem);
+            font-size: 5rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+        .arrow.left {
+            transform: scale(-1,1);
+            left: 1rem;
+        }
+        .arrow.right {
+            right: 1rem;
+        }
+        body.light {
+            overflow: hidden;
+        }
+        body.light .lightbox {
+            display: block;
+        }
+        body.light::before {
+            content: "";
+            /* width: 100vw;
+            height: 100vh; */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, .6);
+        }
+    </style>
+</head>
+<body class="light">
+    <div class="lightbox">
+        <div class="box"></div>
+        <div class="cross"></div>
+        <div class="arrow left">»</div>
+        <div class="arrow right">»</div>
+    </div>
+</body>
+</html>
