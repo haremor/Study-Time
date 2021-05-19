@@ -1,100 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHET</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.0-beta3/css/bootstrap.min.css" integrity="sha512-N415hCJJdJx+1UBfULt+i+ihvOn42V/kOjOpp1UTh4CZ70Hx5bDlKryWaqEKfY/8EYOu/C2MuyaluJryK1Lb5Q==" crossorigin="anonymous" />
-    <style>
-        .box {
-            min-height: 50vh;
-            border-color: rebeccapurple;
-            border-right-style: solid;
-            border-left-style: solid;
-        }
-        .col {
-            border: 1px solid;
-            min-height: 50px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BootsTrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+    integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+    crossorigin="anonymous"></script>
+  <style>
+    .box {
+      min-height: 50vh;
+    }
+    .col {
+      border: 1px solid black;
+      min-height: 50px;
+    }
+  </style>
 </head>
 <body>
-    <div class="box container">
-        <div class="row">
-            <div class="col col-12">
-                <div class="display-3">BUTTSTRAP</div>
-            </div>
-            <div class="col col-4"></div>
-            <div class="col col-4"></div>
-            <div class="col col-4"></div>
-            <div class="col col-2"></div>
-            <div class="col col-10"></div>
-            <div class="col col-12">
-                <!-- table>thead>tr>th{Caption $}*4^^tbody>tr*7>td*4>lorem5 -->
-                <table class="table table-striped table-info">
-                    <thead>
-                        <tr>
-                            <th>Caption 1</th>
-                            <th>Caption 2</th>
-                            <th>Caption 3</th>
-                            <th>Caption 4</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Lorem ipsum dolor sit amet.</td>
-                            <td>Perspiciatis inventore sed ipsam incidunt!</td>
-                            <td>Laudantium quisquam numquam iure delectus!</td>
-                            <td>Sit rerum incidunt quibusdam ducimus?</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem ipsum dolor sit amet.</td>
-                            <td>Sint cumque possimus minus eum.</td>
-                            <td>Dolore culpa placeat accusamus perferendis.</td>
-                            <td>Consequuntur, deleniti natus. Illum, excepturi!</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem ipsum dolor sit amet.</td>
-                            <td>Officiis quas beatae saepe at!</td>
-                            <td>Itaque distinctio repellat id sunt?</td>
-                            <td>Neque ipsum ullam sint explicabo.</td>
-                        </tr>
-                        <tr class="table-warning">
-                            <td>Lorem ipsum dolor sit amet.</td>
-                            <td>Atque asperiores sequi possimus adipisci!</td>
-                            <td>Sapiente ut odio accusantium accusamus.</td>
-                            <td>Laudantium incidunt nobis delectus sequi.</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem ipsum dolor sit amet.</td>
-                            <td>Aut accusamus quidem quisquam aperiam.</td>
-                            <td>Accusantium accusamus est dolores cupiditate.</td>
-                            <td>Deleniti obcaecati minus dolores soluta.</td>
-                        </tr>
-                        <tr class="table-dark">
-                            <td>Lorem ipsum dolor sit amet.</td>
-                            <td>Dignissimos sunt distinctio maxime inventore.</td>
-                            <td>Dicta commodi eveniet eum sint.</td>
-                            <td>Suscipit amet laborum quidem obcaecati!</td>
-                        </tr>
-                        <tr>
-                            <td>Lorem ipsum dolor sit amet.</td>
-                            <td>Cupiditate esse voluptates perferendis perspiciatis?</td>
-                            <td>Consectetur quos ut modi repellendus.</td>
-                            <td>Sapiente soluta rem repellat dolor!</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="col col-6"></div>
-            <div class="col col-6"></div>
-            <div class="col col-12 col-sm-6 col-md-3">card 1</div>
-            <div class="col col-12 col-sm-6 col-md-3">card 2</div>
-            <div class="col col-12 col-sm-6 col-md-3">card 3</div>
-            <div class="col col-12 col-sm-6 col-md-3">card 4</div>
-            <div class="col col-12"></div>
+  <div class="box container">
+    <div class="row">
+      <div class="col col-12">
+        <nav class="navbar navbar-expand-md justify-content-between d-flex navbar-light">
+          <a class="navbar-brand text-dark" href="">Twitter-Bootstrap</a>
+          <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navi">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navi">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a href="" class="nav-link">Item 1</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Item 2</a>
+                <ul class="dropdown-menu">
+                  <li><a href="" class="dropdown-item">drop item 1</a></li>
+                  <li><a href="" class="dropdown-item">drop item 2</a></li>
+                  <li><a href="" class="dropdown-item">drop item 3</a></li>
+                  <li><a href="" class="dropdown-item">drop item 4</a></li>
+                  <li><a href="" class="dropdown-item">drop item 5</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="" class="nav-link">Item 3</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="col col-4"></div>
+      <div class="col col-4"></div>
+      <div class="col col-4"></div>
+      <div class="col col-2"></div>
+      <div class="col col-10"></div>
+      <div class="col col-6"></div>
+      <div class="col col-6"></div>
+      <div class="col col-12 col-sm-6 col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Card 1</h3>
+            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, fugit?</p>
+            <p class="card-text">Provident omnis voluptatibus natus dolor veritatis quisquam vel? Minima, delectus!</p>
+          </div>
+          <div class="card-footer text-end">
+            <button class="btn btn-info">Read more....</button>
+          </div>
         </div>
+      </div>
+      <div class="col col-12 col-sm-6 col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Card 2</h3>
+            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, fugit?</p>
+            <p class="card-text">Provident omnis voluptatibus natus dolor veritatis quisquam vel? Minima, delectus!</p>
+          </div>
+          <div class="card-footer text-end">
+            <button class="btn btn-dark">Read more....</button>
+          </div>
+        </div>
+      </div>
+      <div class="col col-12 col-sm-6 col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Card 3</h3>
+            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, fugit?</p>
+            <p class="card-text">Provident omnis voluptatibus natus dolor veritatis quisquam vel? Minima, delectus!</p>
+          </div>
+          <div class="card-footer text-end">
+            <button class="btn btn-secondary">Read more....</button>
+          </div>
+        </div>
+      </div>
+      <div class="col col-12 col-sm-6 col-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="card-title">Card 4</h3>
+            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, fugit?</p>
+            <p class="card-text">Provident omnis voluptatibus natus dolor veritatis quisquam vel? Minima, delectus!</p>
+          </div>
+          <div class="card-footer text-end">
+            <button class="btn btn-outline-danger">Read more....</button>
+          </div>
+        </div>
+      </div>
+      <div class="col col-12">
+        <table class="table table-bordered table-primary">
+          <!-- .table-borderless .table-bordered .table-dark .table-hover .table-striped -->
+          <thead>
+            <tr>
+              <th>caption 1</th>
+              <th>caption 2</th>
+              <th>caption 3</th>
+              <th>caption 4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Lorem ipsum dolor sit amet.</td>
+              <td>Provident atque repudiandae assumenda iusto.</td>
+              <td>Quas dolores earum in iure!</td>
+              <td>Amet deserunt iure ut sequi?</td>
+            </tr>
+            <tr class="table-danger">
+              <td>Lorem ipsum dolor sit amet.</td>
+              <td>Fugit ratione nam voluptatum dignissimos.</td>
+              <td>Eligendi, eius tenetur! Consectetur, accusamus!</td>
+              <td>Illo distinctio blanditiis enim architecto.</td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum dolor sit amet.</td>
+              <td>Inventore repellat similique expedita aliquam!</td>
+              <td>In voluptate tenetur aut ipsam.</td>
+              <td>Perspiciatis adipisci aperiam consectetur amet.</td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum dolor sit amet.</td>
+              <td>Eaque ad consectetur harum blanditiis.</td>
+              <td class="table-warning">Obcaecati atque reprehenderit laudantium tempora!</td>
+              <td>Omnis quae neque odio distinctio?</td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum dolor sit amet.</td>
+              <td>Cum, exercitationem corporis. Voluptatibus, tenetur!</td>
+              <td>Magni ut libero possimus optio.</td>
+              <td>Voluptate hic ducimus illo deserunt.</td>
+            </tr>
+            <tr>
+              <td>Lorem ipsum dolor sit amet.</td>
+              <td>Reiciendis, cum! Ratione, possimus tempore.</td>
+              <td>Dolore sint aut nihil ad.</td>
+              <td>Dolor odio optio repellat sunt.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
+  </div>
 </body>
 </html>
