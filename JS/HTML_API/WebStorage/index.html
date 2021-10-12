@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 API. Демонстрация: Web Storage</title>
+    <meta charset="UTF-8" />
+    <style>
+        form {
+            float: left
+        }
+
+        form label {
+            float: left
+        }
+
+        form div {
+            text-align: right
+        }
+    </style>
+
+</head>
+
+<body>
+    <form action="" onsubmit="return false">
+        <div>
+            <label for="n">Имя: </label>
+            <input id='n' type="text" name="name" />
+        </div>
+        <div>
+            <label for="a">Возраст: </label>
+            <input id='a' type="text" name="age" />
+        </div>
+        <div>
+            <button id="b1">Сохранить</button>
+            <button id="b2">Получить</button><br>
+            <button id="b3">Удалить</button>
+            <button id="b4">Очистить</button>
+        </div>
+    </form>
+    <ul id="list"></ul>
+    <script>
+        let txtName, txtAge, btnSave, btnGet, btnDel, btnCls;
+
+        txtName = document.getElementById("n");
+        txtAge = document.getElementById("a");
+
+        btnSave = document.getElementById("b1");
+        btnGet = document.getElementById("b2");
+        btnDel = document.getElementById("b3");
+        btnCls = document.getElementById("b4");
+        ul = document.getElementById("list");
+
+        btnSave.addEventListener('click', dataSave);
+        btnGet.addEventListener('click', dataGet);
+
+        btnDel.addEventListener('click', dataDelete);
+        btnCls.addEventListener('click', dataClear);
+
+        function dataSave() {
+            localStorage.setItem("name", txtName.value);
+            localStorage.setItem("age", txtAge.value);
+        }
+
+        function dataGet() {
+            txtName.value = localStorage.getItem("name");
+            txtAge.value = localStorage.getItem("age");
+        }
+
+        function dataDelete() {
+            localStorage.removeItem("name");
+        }
+
+        function dataClear() {
+            localStorage.clear()
+        }
+
+        function showStorage() {
+            ul.innerHTML = "";
+            for (let i = 0; i < localStorage.length; ++i) {
+                let key = localStorage.key(i);
+                let item = localStorage.getItem(key);
+                ul.innerHTML += `<li>${key}: ${item}</li>`
+            }
+        }
+    </script>
+</body>
+
+</html>

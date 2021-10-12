@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HTML5 API. Контрольная точка: квадратики</title>
+    <meta charset="utf-8" />
+    <style>
+        div {
+            position: absolute;
+            padding: 0;
+            margin: 0;
+        }
+
+        .element {
+            width: 50px;
+            height: 50px;
+            top: 50px;
+        }
+
+        .element[data-color="red"] {
+            background-color: red;
+            left: 30px;
+        }
+
+        .element[data-color="gray"] {
+            background-color: gray;
+            left: 100px;
+        }
+
+        .element[data-color="yellow"] {
+            background-color: yellow;
+            left: 170px;
+        }
+
+        .area {
+            width: 50px;
+            height: 50px;
+            top: 120px;
+        }
+
+        .area[data-color="yellow"] {
+            border: 3px solid yellow;
+            left: 10px;
+        }
+
+        .area[data-color="red"] {
+            border: 3px solid red;
+            left: 100px;
+        }
+
+        .area[data-color="gray"] {
+            border: 3px solid gray;
+            left: 190px;
+        }
+
+        .filled_red {
+            background-color: red;
+        }
+
+        .filled_gray {
+            background-color: gray;
+        }
+
+        .filled_yellow {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="element" data-color="red" draggable="true"></div>
+    <div class="element" data-color="gray" draggable="true"></div>
+    <div class="element" data-color="yellow" draggable="true"></div>
+    <div class="area" data-color="red"></div>
+    <div class="area" data-color="gray"></div>
+    <div class="area" data-color="yellow"></div>
+    <script src=".js"></script>
+</body>
+
+</html>

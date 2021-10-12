@@ -1,0 +1,13 @@
+<div id="info"></div>
+<script>
+    this.addEventListener("storage", showInfo);
+    const div = document.getElementById("info");
+
+    function showInfo(e) { // Storage event
+        div.innerHTML = "<h4>Storage has changed'</h4>";
+        div.innerHTML += `Key: ${e.key}<br>`;
+        div.innerHTML += `Old key: ${e.oldValue}<br>`;
+        div.innerHTML += `New key: ${e.newValue}<br>`;
+        div.innerHTML += `URL: ${e.url}`;
+    }
+</script>
